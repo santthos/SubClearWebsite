@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 30% 98%; /* #F6F8FA */
+    --foreground: 220 40% 16%; /* #1B2B45 */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-primary-900 bg-[#F6F8FA] antialiased font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-primary-900 tracking-tight font-sans;
+  }
+
+  section + section {
+    @apply border-t border-gray-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-4 bg-secondary-700 text-white text-lg rounded-lg 
+           hover:bg-secondary-800 transition-all duration-200 
+           shadow-md hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-4 bg-gray-100 text-primary-900 text-lg rounded-lg 
+           hover:bg-gray-200 transition-all duration-200 
+           shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-28;
+  }
+
+  .card {
+    @apply p-8 rounded-3xl bg-white shadow-xl hover:shadow-2xl 
+           transition-all duration-300 transform hover:-translate-y-1 border border-gray-100;
+  }
+
+  .divider {
+    @apply border-t border-gray-200 my-16;
+  }
+
+  .logo-text {
+    @apply font-display tracking-tight;
+  }
+} 
