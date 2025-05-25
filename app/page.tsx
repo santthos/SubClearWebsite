@@ -1,6 +1,10 @@
 'use client'
 
+<<<<<<< HEAD
 import { useState, useEffect } from 'react'
+=======
+import { useState, useEffect, useRef } from 'react'
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import Navigation from './components/Navigation'
 import Image from 'next/image'
@@ -8,6 +12,11 @@ import Image from 'next/image'
 export default function Home() {
   const [showMain, setShowMain] = useState(false)
   const [transitioning, setTransitioning] = useState(false)
+<<<<<<< HEAD
+=======
+  const [visibleSection, setVisibleSection] = useState('')
+  const observerRef = useRef<IntersectionObserver | null>(null)
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
 
   // Prevent scrolling when splash is visible
   useEffect(() => {
@@ -21,6 +30,38 @@ export default function Home() {
     };
   }, [showMain]);
 
+<<<<<<< HEAD
+=======
+  // Set up intersection observer for section animations
+  useEffect(() => {
+    if (showMain) {
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setVisibleSection(entry.target.id);
+              const content = entry.target.querySelector('.section-content');
+              if (content) content.classList.add('visible');
+            } else {
+              const content = entry.target.querySelector('.section-content');
+              if (content) content.classList.remove('visible');
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+
+      document.querySelectorAll('section').forEach((section) => {
+        observerRef.current?.observe(section);
+      });
+    }
+
+    return () => {
+      observerRef.current?.disconnect();
+    };
+  }, [showMain]);
+
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
   // Handles the splash-to-main transition
   const handleFindOutMore = () => {
     setTransitioning(true)
@@ -33,6 +74,10 @@ export default function Home() {
       {!showMain && (
         <div
           className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#F6F8FA] transition-opacity duration-700 ${transitioning ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+<<<<<<< HEAD
+=======
+          style={{ transform: 'scale(1)' }}
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
         >
           <div className="flex items-center justify-center mb-10 w-[180px] h-[28px] sm:w-[320px] sm:h-[48px] md:w-[480px] md:h-[72px]">
             <Image src="/SubclearLogo.svg" alt="SubClear Logo" width={480} height={72} priority className="w-full h-auto" />
@@ -52,12 +97,21 @@ export default function Home() {
       )}
 
       {/* Main Content */}
+<<<<<<< HEAD
       <div className={`transition-opacity duration-700 ${showMain ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <Navigation />
         {/* Concept Section */}
         <section id="concept" className="section-padding bg-white pt-20 sm:pt-28 md:pt-32">
           <div className="container-custom">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-16 md:mb-20 font-sans mt-0 pt-4 sm:pt-8">The Concept</h2>
+=======
+      <div className={`transition-opacity duration-700 ${showMain ? 'opacity-100' : 'opacity-0 pointer-events-none'} scroll-snap-container`}>
+        <Navigation />
+        {/* Concept Section */}
+        <section id="concept" className="full-page-section">
+          <div className="container-custom section-content">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-16 md:mb-20 font-sans">The Concept</h2>
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
             <div className="max-w-4xl mx-auto">
               <p className="text-base sm:text-xl md:text-2xl mb-8 leading-relaxed text-gray-700 font-sans px-2 sm:px-0">
                 SubClear is a clean-tech startup developing a track-mounted air filtration system designed specifically for underground railway systems, starting with the London Underground. The system attaches to existing engineering trains and is passively towed through the tunnels, cleaning polluted air directly at track level — where air pollution is densest and most toxic.
@@ -66,8 +120,13 @@ export default function Home() {
           </div>
         </section>
         {/* Problem Section */}
+<<<<<<< HEAD
         <section id="problem" className="section-padding bg-[#F0F7F4]">
           <div className="container-custom">
+=======
+        <section id="problem" className="full-page-section">
+          <div className="container-custom section-content">
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-16 md:mb-20 font-sans">The Problem</h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-base sm:text-xl md:text-2xl mb-8 leading-relaxed text-gray-700 font-sans px-2 sm:px-0">
@@ -86,8 +145,13 @@ export default function Home() {
           </div>
         </section>
         {/* Solution Section */}
+<<<<<<< HEAD
         <section id="solution" className="section-padding bg-white">
           <div className="container-custom">
+=======
+        <section id="solution" className="full-page-section">
+          <div className="container-custom section-content">
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-16 md:mb-20 font-sans">The Solution</h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-base sm:text-xl md:text-2xl mb-8 leading-relaxed text-gray-700 font-sans px-2 sm:px-0">
@@ -97,8 +161,13 @@ export default function Home() {
           </div>
         </section>
         {/* Components Section */}
+<<<<<<< HEAD
         <section id="components" className="section-padding bg-[#E6F0FA]">
           <div className="container-custom">
+=======
+        <section id="components" className="full-page-section">
+          <div className="container-custom section-content">
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-16 md:mb-20 font-sans">Core System Components</h2>
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
@@ -115,8 +184,13 @@ export default function Home() {
           </div>
         </section>
         {/* Contact Section */}
+<<<<<<< HEAD
         <section id="contact" className="section-padding bg-[#F0F7F4]">
           <div className="container-custom">
+=======
+        <section id="contact" className="full-page-section">
+          <div className="container-custom section-content">
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-10 font-sans">Contact Us</h2>
             <p className="text-base sm:text-xl md:text-2xl mb-8 sm:mb-12 text-gray-700 font-sans text-center px-2 sm:px-0">
               Ready to discuss your underground transit project?
@@ -165,4 +239,8 @@ const components = [
     module: "Modular Chassis",
     function: "Designed to integrate with existing TfL rolling stock and loading gauges"
   }
+<<<<<<< HEAD
 ] 
+=======
+]
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c

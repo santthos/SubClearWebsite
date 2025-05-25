@@ -7,21 +7,35 @@ export default function Navigation() {
   return (
     <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-lg shadow-xl border-b border-gray-100">
       <div className="container-custom">
+<<<<<<< HEAD
         <div className="flex flex-col md:flex-row items-center justify-between h-auto md:h-28 py-4 gap-4 md:gap-0">
+=======
+        <div className="flex flex-col md:flex-row items-center justify-between h-auto md:h-36 py-6 md:py-8 gap-4 md:gap-0">
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
           <div className="flex items-center justify-center w-full md:w-auto">
             <Link href="/" className="flex items-center">
               <Image 
                 src="/SubclearLogo.svg" 
                 alt="SubClear Logo" 
+<<<<<<< HEAD
                 width={240} 
                 height={36} 
                 className="md:w-[480px] md:h-[72px] w-[180px] h-[28px]"
+=======
+                width={90} 
+                height={28} 
+                className="md:w-[216px] md:h-[67px] w-[108px] h-[34px]"
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
                 priority 
               />
             </Link>
           </div>
           <div className="flex items-center justify-center w-full md:w-auto">
+<<<<<<< HEAD
             <Link href="mailto:Team@SubClear.co.uk" className="btn-primary text-base md:text-lg px-6 md:px-10 py-4 md:py-5 shadow-md hover:shadow-xl transition-all duration-200 w-full md:w-auto text-center">
+=======
+            <Link href="mailto:Team@SubClear.co.uk" className="btn-primary text-base md:text-lg px-8 md:px-12 py-5 md:py-6 shadow-md hover:shadow-xl transition-all duration-200 w-full md:w-auto text-center">
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
               Get in Touch
             </Link>
           </div>

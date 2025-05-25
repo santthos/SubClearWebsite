@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
+=======
+html {
+  font-size: 10px;
+}
+
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
 @layer base {
   :root {
     --background: 220 30% 98%; /* #F6F8FA */
@@ -16,15 +23,26 @@
 
   body {
     @apply text-primary-900 bg-[#F6F8FA] antialiased font-sans;
+<<<<<<< HEAD
+=======
+    /* Removed overflow-y: hidden; to allow normal body scrolling */
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold text-primary-900 tracking-tight font-sans;
   }
 
+<<<<<<< HEAD
   section + section {
     @apply border-t border-gray-200;
   }
+=======
+  /* Removed border between sections as they will be full pages */
+  /* section + section {
+    @apply border-t border-gray-200;
+  } */
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
 }
 
 @layer components {
@@ -42,6 +60,11 @@
 
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+<<<<<<< HEAD
+=======
+    transform: scale(1.2);
+    transform-origin: top center;
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
   }
 
   .section-padding {
@@ -53,11 +76,87 @@
            transition-all duration-300 transform hover:-translate-y-1 border border-gray-100;
   }
 
+<<<<<<< HEAD
   .divider {
     @apply border-t border-gray-200 my-16;
   }
+=======
+  /* Removed divider as sections are full pages */
+  /* .divider {
+    @apply border-t border-gray-200 my-16;
+  } */
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
 
   .logo-text {
     @apply font-display tracking-tight;
   }
+<<<<<<< HEAD
+=======
+
+  /* Removed scroll snap properties */
+  .scroll-snap-container {
+    /* scroll-snap-type: y mandatory; */
+    overflow-y: auto; /* Changed from scroll to auto for normal scrolling */
+    height: auto; /* Changed from 100vh to auto */
+    scroll-padding-top: 0; /* Removed scroll-padding-top */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .full-page-section {
+    @apply w-screen flex items-center justify-center relative;
+    padding: 2rem 0;
+    margin-top: 2rem; /* Base spacing between sections */
+    /* Removed scroll-snap-align and scroll-snap-stop */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* First section needs extra margin to account for nav bar */
+  .full-page-section:first-of-type {
+    margin-top: calc(144px + 2rem); /* Nav height + base spacing */
+  }
+
+  /* Section content animations */
+  .section-content {
+    @apply transform transition-all duration-700;
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+
+  .section-content.visible {
+    @apply opacity-100;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Adjust padding and margin-top for larger screens */
+  @media (min-width: 768px) {
+    .full-page-section {
+      padding: 4rem 0;
+      margin-top: 4rem; /* Base spacing between sections on desktop */
+    }
+    .full-page-section:first-of-type {
+      margin-top: calc(134px + 4rem); /* Nav height + base spacing on desktop */
+    }
+  }
+
+  /* Modern scrollbar styling */
+  .scroll-snap-container::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scroll-snap-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scroll-snap-container::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .scroll-snap-container::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+>>>>>>> 5c9c2d2767f927f2545ed1d9de5df083e22d749c
 } 
