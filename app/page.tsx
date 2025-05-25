@@ -92,7 +92,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-16 md:mb-20 font-sans">The Concept</h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-base sm:text-xl md:text-2xl mb-8 leading-relaxed text-gray-700 font-sans px-2 sm:px-0">
-                SubClear is a clean-tech startup developing a track-mounted air filtration system designed specifically for underground railway systems, starting with the London Underground. The system attaches to existing engineering trains and is passively towed through the tunnels, cleaning polluted air directly at track level — where air pollution is densest and most toxic.
+                SubClear is a clean-tech startup developing a track-mounted air filtration system designed specifically for underground rail networks. The system attaches to existing engineering trains and is passively towed through the tunnels, cleaning polluted air directly at track level — where air pollution is densest and most toxic.
               </p>
             </div>
           </div>
@@ -151,7 +151,7 @@ export default function Home() {
           <div className="container-custom section-content">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-10 font-sans">Contact Us</h2>
             <p className="text-base sm:text-xl md:text-2xl mb-8 sm:mb-12 text-gray-700 font-sans text-center px-2 sm:px-0">
-              Ready to discuss your underground transit project?
+              Ready to enhance the air quality in your underground rail network?
             </p>
             <div className="flex justify-center">
               <a
@@ -195,6 +195,6 @@ const components = [
   },
   {
     module: "Modular Chassis",
-    function: "Designed to integrate with existing TfL rolling stock and loading gauges"
+    function: "Designed to integrate with existing underground rail rolling stock and loading gauges"
   }
 ]
